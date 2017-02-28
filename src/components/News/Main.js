@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import logo from '../../logo.svg'
 import '../../App.css'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import { Search } from './Search.js'
 import { Header } from '../Header/Header.js'
@@ -26,7 +24,6 @@ class Main extends Component {
         return response.json()
       })
       .then(function (data) {
-        console.log(data.hits)
         that.setState({
           hackerNewsList: data.hits
         })

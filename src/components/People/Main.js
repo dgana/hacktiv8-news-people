@@ -11,15 +11,13 @@ class People extends Component {
     }
   }
 
-  componentWillMount () {
-    const that = this
+  componentDidMount () {
     fetch(`http://swapi.co/api/people/`)
       .then(response => {
         return response.json()
       })
       .then(data => {
-        console.log(data.results)
-        that.setState({
+        this.setState({
           PeopleList: data.results
         })
       })
